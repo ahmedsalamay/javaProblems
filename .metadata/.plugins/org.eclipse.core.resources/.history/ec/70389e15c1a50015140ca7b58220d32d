@@ -1,0 +1,69 @@
+
+public class Process {
+private String Name;
+private double Arrival;
+private double Brust;
+private double Waiting;
+private double Response;
+private double incArrival;
+//private boolean Before;
+
+public Process(){}
+
+public Process(String name, double arrival, double brust) {
+	Name = name;
+	Arrival = arrival;
+	Brust = brust;
+	incArrival=Arrival;
+	Response=-1;
+	//Before=false;
+	Waiting=0.0;
+}/*public boolean isBefore() {
+	return Before;
+}
+
+public void setBefore(boolean before) {
+	Before = before;
+}
+*/
+public void inc()
+{Waiting=Waiting+1;}
+public void dec()
+{Brust--;}
+public String getName() {
+	return Name;
+}
+public void setName(String name) {
+	Name = name;
+}
+public double getArrival() {
+	return Arrival;
+}
+public void setArrival(double arrival) {
+	Arrival = arrival;
+}
+public double getBrust() {
+	return Brust;
+}
+public void setBrust(double brust) {
+	Brust = brust;
+}
+public double getWaiting() {
+	return Waiting;
+}
+public void setWaiting(double waiting) {
+	Waiting = waiting;
+}
+public double getResponse() {
+	return Response;
+}
+public void setResponse(double response) {
+	Response = response;
+}
+public double getIncArrival() {
+	return incArrival;
+}
+public void setIncArrival(double incArrival) {
+	this.incArrival = incArrival;
+}
+}

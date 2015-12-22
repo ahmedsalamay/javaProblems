@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=text
+comment0.target=Arithimetic(java.lang.String)
+comment1.params=
+comment1.target=void\ set_weight()
+comment2.params=small
+comment2.target=int\ search(java.lang.String)
+comment3.params=
+comment3.target=void\ Comp()
+comment4.params=val
+comment4.target=int\ serarch(double)
+comment5.params=
+comment5.target=void\ decomp()
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7

@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ Launch\ the\ application.\r\n
+comment1.params=
+comment1.target=void\ run()
+comment10.params=arg0
+comment10.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment11.params=arg0
+comment11.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.params=
+comment2.target=LZ77()
+comment3.params=arg0
+comment3.target=void\ keyTyped(java.awt.event.KeyEvent)
+comment4.params=arg0
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment5.params=arg0
+comment5.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment6.params=arg0
+comment6.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment7.params=e
+comment7.target=void\ keyTyped(java.awt.event.KeyEvent)
+comment8.params=arg0
+comment8.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment9.params=e
+comment9.target=void\ keyTyped(java.awt.event.KeyEvent)
+numComments=12

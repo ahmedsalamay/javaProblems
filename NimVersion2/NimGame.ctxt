@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=name
+comment0.target=void\ setPlayer1Name(java.lang.String)
+comment0.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment1.params=
+comment1.target=java.lang.String\ getPlayer1Name()
+comment2.params=name
+comment2.target=void\ setPlayer2Name(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ getPlayer2Name()
+comment4.params=c
+comment4.target=void\ makeChoice(int)
+comment5.params=
+comment5.target=int\ getChoice()
+comment6.params=Player
+comment6.target=void\ changeTurn(java.lang.String)
+comment7.params=num
+comment7.target=void\ setHeabA(int)
+comment8.params=Winner
+comment8.target=void\ Play(java.lang.String)
+comment9.params=
+comment9.target=int\ getAdd()
+numComments=10

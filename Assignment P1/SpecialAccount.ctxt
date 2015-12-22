@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=num\ bal
+comment0.target=SpecialAccount(int,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ SpecialAccount\r\n
+comment1.params=amount
+comment1.target=void\ Withdraw(int)
+comment1.text=\r\n\ withdraw\ to\ allow\ over\ drafting\ with\ maximum\ limit\ of\ 1000\ LE.\r\n\ @param\ the\ amount\ of\ money\ you\ want\ to\ take\ \r\n\ @return\ None\ (Void)\r\n\ @override\ the\ withdraw\ method\ on\ the\ Account\ class\r\n
+numComments=2

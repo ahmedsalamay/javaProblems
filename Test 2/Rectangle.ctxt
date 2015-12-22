@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=length\ width\ color
+comment0.target=Rectangle(double,\ double,\ int)
+comment1.params=
+comment1.target=double\ getArea()
+numComments=2

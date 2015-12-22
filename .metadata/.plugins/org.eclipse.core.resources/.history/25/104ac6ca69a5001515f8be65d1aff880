@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		ArrayList<Process>process=new ArrayList<Process>();
+		System.out.println("Enter the processes number: ");
+		Scanner cin=new Scanner(System.in);
+        int num=cin.nextInt();
+        for(int i=0;i<num;i++){
+           String name=cin.next();
+            System.out.print("enter Process name = ");
+          //but somthing here
+            System.out.print("arravial time = ");
+          //but somthing here
+            System.out.print("burst time = ");
+           
+    }
+    System.out.println("Enter your schedulers number:");
+    System.out.println("1-FCFS");
+    System.out.println("2-SJF");
+    System.out.println("3-RR");
+    int Choose=cin.nextInt();
+    if(Choose==1)
+    {}//but somthing here
+    else if(Choose==2)
+    {}//but somthing here
+    else if(Choose==3)
+    {}//but somthing here
+    else
+        System.out.println("Wrong input");
+    
+
+	}
+
+}

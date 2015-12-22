@@ -1,0 +1,336 @@
+
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CPUSchedulingTec {
+	
+	private int Time=0;
+	
+static ArrayList<Process> Sort(ArrayList<Process>process)
+{int numberOfPocess=process.size();
+	for (int i = 0; i < numberOfPocess; i++) {
+		for (int j = i + 1; j < numberOfPocess; j++) {
+			if (process.get(i).getArrival() > process.get(j).getArrival()) {
+				Process tmp = process.get(i);
+				process.set(i, process.get(j));
+				process.set(j, tmp);
+			}
+		}
+	}
+	return process;
+	}
+static ArrayList<Process> SortBurst(ArrayList<Process>process)
+{int numberOfPocess=process.size();
+	for (int i = 0; i < numberOfPocess; i++) {
+		for (int j = i + 1; j < numberOfPocess; j++) {
+			if (process.get(i).getBrust()> process.get(j).getBrust()) {
+				Process tmp = process.get(i);
+				process.set(i, process.get(j));
+				process.set(j, tmp);
+			}
+		}
+	}
+	return process;
+	}
+
+
+static void  FIFS(ArrayList<Process>process){
+	process =Sort(process);
+	double sum=0.0;
+	double sum2=0.0;
+	double sum3=0.0;
+	System.out.println("ProcessName" + "   "  + "WatingTime" +"   " +"Statrt At"+"    "+"Response");
+    for(int i=0;i<process.size();i++)
+    {
+        if(i==0)
+        {
+            process.get(0).setResponse(process.get(0).getArrival());
+            process.get(0).setWaiting(0);
+            process.get(i).setFirstOut(process.get(i).getWaiting()+process.get(i).getBrust());
+            //if(process.get(0).getBrust()<2)
+           // 	 process.get(i).setFirstOut(1);
+            
+        }
+        else
+        {
+            double estmatedNewArrival;
+            estmatedNewArrival = process.get(i-1).getWaiting() + process.get(i-1).getBrust()+ process.get(i-1).getArrival();  
+            if( estmatedNewArrival < process.get(i).getArrival() )
+            {
+            	process.get(i).setResponse(process.get(i).getArrival());
+                process.get(i).setWaiting(0);
+                process.get(i).setFirstOut(process.get(i).getWaiting()+process.get(i).getBrust());
+                
+            }
+            else{
+            	 process.get(i).setWaiting(estmatedNewArrival - process.get(i).getArrival()); 
+            	 process.get(i).setResponse( process.get(i).getWaiting()+process.get(i).getArrival());
+            	  process.get(i).setFirstOut(process.get(i).getWaiting()+process.get(i).getBrust());
+            }
+        //    process.get(i).setFirstOut(process.get(i).getResponse()+2);
+         //   if(process.get(0).getBrust()<2)
+           //	 process.get(i).setFirstOut(1);
+        }
+        System.out.println(process.get(i).getName() + "            "  +process.get(i).getWaiting()+ "            "  +process.get(i).getResponse()+"    "+(process.get(i).getFirstOut()) );
+        sum+=process.get(i).getWaiting();
+        sum2+=(process.get(i).getFirstOut();
+        sum3+=process.get(i).getResponse();
+    }
+     System.out.println(" Waiting time="+sum);
+    System.out.println("AverageWatingTime "+(double)sum/process.size());
+    System.out.println(" Response time="+sum2);
+    System.out.println("AverageResponseTime "+(double)sum2/process.size());
+    System.out.println(" Start time="+sum3);
+    System.out.println("AverageStartTime "+(double)sum3/process.size());
+}
+static void  SJF(ArrayList<Process>process){
+	process=Sort(process);
+	double First=process.get(0).getArrival();
+	process=SortBurst(process);
+	 boolean lock=true;
+	 int b=0;
+	 double totalTime=First,sum=0.0;
+	 int size=process.size();
+	 double sum2=0;
+	 for(int i=0;i<size;i++)
+	 {
+		 totalTime+=process.get(i).getBrust();
+	 }
+	for(int Time=0;Time<totalTime;Time++)
+	{
+		lock=true;
+		for(int count=0;count<process.size();count++){
+			
+		if(process.get(count).getBrust()>0){
+		if((int)(process.get(count).getArrival())<=Time&&lock==true)
+		{
+			//process.get(count).setResponse(count);
+			if(process.get(count).isBefore()==false)
+			{// assume first output after 1 sec from starting
+				System.out.println(process.get(count).getName()+"Start at Time: "+Time);
+				process.get(count).setBefore(true);
+				process.get(count).setResponse(process.get(count).getWaiting()+process.get(count).getBrust());
+				System.out.println("Res "+process.get(count).getResponse());
+				sum2+=Time;
+			}
+			System.out.print(Time+"--->");
+		System.out.println(process.get(count).getName());
+		
+				
+		process.get(count).dec();
+		//lock=false;
+		b=1;
+			process=SortBurst(process);
+			
+		}
+		if(process.get(count).getArrival()<=Time&&lock==false)
+		{
+			process.get(count).inc();
+			//System.out.println("INC "+process.get(count).getName());
+			//System.out.println("Now Wait = "+process.get(count).getWaiting());
+			
+		}
+		if(b==1)
+		lock=false;
+	   }
+		
+		}
+    }
+	for(int i=0;i<process.size();i++)	
+	{
+		System.out.println(process.get(i).getName() + "            "  +process.get(i).getWaiting() );
+        sum+=process.get(i).getWaiting();
+	}
+	System.out.println(" Waiting time="+sum);
+    System.out.println("AverageWatingTime "+(double)sum/process.size());
+    sum=0;
+    for(int i=0;i<process.size();i++)	
+	{
+		
+        sum+=process.get(i).getResponse();
+	}
+	System.out.println(" Respose time="+sum);
+    System.out.println("AverageResponseTime "+(double)sum/process.size());
+    System.out.println(" Start time="+sum2);
+    System.out.println("AverageStartTime "+(double)sum2/process.size());
+}
+static void RR(ArrayList<Process>process){
+	
+	int Time=0;
+	int Time2=0;
+	Scanner cin=new Scanner(System.in);
+	double avg=0.0;
+	double[] b =new double [process.size()];
+	for(int i=0;i<process.size();i++)
+		b[i]=process.get(i).getBrust();
+	int quantum=cin.nextInt(),sum=0;
+	do
+	{
+		for (int l = 0; l < process.size(); l++) {
+			if(process.get(l).getBrust()>0)
+			{System.out.println(process.get(l).getName() +"Is Now Running"+"At Time"+Time2);
+						Time++;
+			}
+			
+			if(process.get(l).getBrust()>quantum)
+			{Time2+=4;
+				process.get(l).setBrust(process.get(l).getBrust()-quantum);
+				if(process.get(l).isSecBefore()==false)
+				{System.out.println("First OutPut At Time:"+Time2);
+				process.get(l).setSecBefore(true);
+				process.get(l).setResponse(Time2);
+				}
+
+				for(int j = 0 ; j < process.size(); j++){
+					if((j!=l)&&(process.get(j).getBrust()!=0))
+						process.get(j).incRR(quantum);
+					
+				}
+			}
+			else
+			{Time2+=process.get(l).getBrust();
+				if(process.get(l).isSecBefore()==false)
+				{System.out.println("First OutPut At Time:"+Time2);
+				process.get(l).setSecBefore(true);
+				process.get(l).setResponse(Time2);
+				}
+
+				for(int j = 0; j <process.size(); j++)
+				{
+					if((j!=l)&&(process.get(j).getBrust()!=0))
+						process.get(j).incRR(process.get(l).getBrust());
+				}
+				process.get(l).setBrust(0);
+				
+			if(process.get(l).getBrust()==0&&process.get(l).isBefore()==false)
+				{System.out.println(process.get(l).getName() +"Finished");process.get(l).setBefore(true);}
+			}
+		}
+		sum=0;
+		for(int k = 0; k < process.size(); k++)
+			sum=(int) (sum+process.get(k).getBrust());
+		
+	}
+	while(sum>0);
+	System.out.println("\t\tWT\t\tResponse\t");
+	for(int i = 0; i < process.size(); i++){
+		System.out.println(process.get(i).getName()+"\t\t"+process.get(i).getWaiting()+"\t\t"+((process.get(i).getWaiting())+(b[i])));
+	}
+	for (int i = 0; i < process.size(); i++) {
+		avg+= process.get(i).getWaiting();
+	}
+	int avgres=0;
+	for (int i = 0; i < process.size(); i++) {
+		avgres+= process.get(i).getResponse();
+	}
+	double avgores=0;
+	for (int i = 0; i < process.size(); i++) {
+		avgores+= process.get(i).getWaiting()+(b[i]);
+	}
+	System.out.println("Avarage Waiting Time : " + avg/ process.size()+"\tAverage start TIme"+(avgres/process.size())+"\tAvaerage Respone "+avgores/process.size());
+	
+	
+	
+	
+	
+	/*
+	Scanner cin=new Scanner(System.in);
+	int quantum= cin.nextInt();
+	int Delay=quantum*process.size();
+	int TotalChunck=0;
+	for(int i=0;i<process.size();i++)
+	{
+		if((process.get(i).getBrust()/quantum)%quantum==0)
+		TotalChunck+=process.get(i).getBrust()/quantum;
+		else
+			{TotalChunck=(int)(process.get(i).getBrust()/quantum);
+			TotalChunck+=1;
+			}
+		
+	}
+	
+	
+	
+	
+	sort  arr 
+	
+	
+	
+	clock = 0 ;
+	for input . siZe ()
+	temp = input get 
+	tempar <= cl
+	quee addtemp }
+	
+	
+	
+	for que
+	input  remove ( que  get);
+	
+	if ( que size >0) 
+	remove
+	
+	
+	process =Sort(process);
+	double sum=0.0;
+	System.out.println("ProcessName" + "   "  + "WatingTime" +"   " +"Statrt At");
+    for(int i=0;i<To;i++)
+    {
+        if(i==0)
+        {
+        	if(process.get(0).getBrust()-quantum>0)
+        	{
+        		 process.get(0).incRR(Delay);
+        		 Process pro=process.get(0);
+        		 process.remove(0);
+        		 process.add(pro);
+        	}
+        	else{
+        		 process.get(0).setWaiting(0);
+        	}
+            process.get(0).setResponse(process.get(0).getArrival());
+           
+            
+        }
+        else
+        {
+            double estmatedNewArrival;
+            estmatedNewArrival = process.get(i-1).getWaiting() + process.get(i-1).getBrust();  // wating + burst
+            if( estmatedNewArrival < process.get(i).getArrival() )  // not arrived 
+            {
+            	if(process.get(i).getBrust()-quantum>0){
+            		 process.get(i).incRR(Delay);
+            		 Process pro=process.get(i);
+            		 process.remove(i);
+            		 process.add(pro);
+            }else{
+       		 process.get(0).setWaiting(0);
+       	     }
+            	process.get(0).setResponse(process.get(i).getArrival());
+               
+            }
+            else{
+            	
+            	if(process.get(i).getBrust()-quantum>0){
+           		 process.get(i).incRR(Delay+estmatedNewArrival - process.get(i).getArrival());
+           		 Process pro=process.get(i);
+           		 process.remove(i);
+           		 process.add(pro);
+           }else{
+      		 process.get(0).setWaiting(0);
+      	     }
+            	
+            	
+            	 process.get(i).setResponse( process.get(i).getWaiting()+process.get(i).getArrival());
+            }
+               
+        }
+        System.out.println(process.get(i).getName() + "            "  +process.get(i).getWaiting()+ "            "  +process.get(i).getResponse() );
+        sum+=process.get(i).getWaiting();
+    }
+     System.out.println(" response time="+sum);
+    System.out.println("AverageWatingTime "+(double)sum/process.size());
+    */
+}
+}

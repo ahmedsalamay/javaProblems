@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=name\ add\ nid\ phone\ CID\ acc_
+comment0.target=CommercialClient(java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ Account)
+comment0.text=\r\n\ Constructo\ \r\n
+comment1.params=CID
+comment1.target=void\ set_commercialID(int)
+comment1.text=setter\ for\ commerecail\ ID\r\n\ @param\ commerical\ ID\ \r\n\ @return\ NONe(void)\r\n
+comment2.params=
+comment2.target=int\ get_commercialID()
+comment2.text=getter\ for\ commerecail\ ID\r\n\ @param\ commerical\ ID\ \r\n\ @return\ NONe(void)\r\n
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment3.text=\r\n\ toString\ Function\r\n\ \r\n\ @param\ No\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ String\ of\ information\ about\ Comapny\r\n\ @@Override\ the\ to\ string\ method\ in\ the\ String\ class\r\n
+numComments=4

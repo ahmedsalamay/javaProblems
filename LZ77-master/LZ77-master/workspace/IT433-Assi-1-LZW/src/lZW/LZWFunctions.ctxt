@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=long\ getSizeBefore()
+comment1.params=sizeBefore
+comment1.target=void\ setSizeBefore(long)
+comment2.params=
+comment2.target=long\ getSizeAfter()
+comment3.params=sizeAfter
+comment3.target=void\ setSizeAfter(long)
+comment4.params=buffer
+comment4.target=java.lang.String\ compressLZW(java.lang.String)
+comment5.params=path\ des
+comment5.target=java.io.File\ compressFile(java.lang.String,\ java.lang.String)
+comment6.params=tags
+comment6.target=java.lang.String\ deCompressLZW(java.lang.String)
+comment7.params=path\ des
+comment7.target=java.io.File\ deCompressFile(java.lang.String,\ java.lang.String)
+numComments=8

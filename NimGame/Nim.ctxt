@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Nim()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nim\r\n
+comment1.params=num
+comment1.target=void\ setHeabA(int)
+comment1.text=\r\n\ Setter\ the\ Number\ of\ Objects\ in\ Heab\ A\r\n\ \r\n\ @param\ \ Number\ of\ Objects\r\n\ @return\ \ \ \ None\ \r\n
+comment2.params=num
+comment2.target=void\ setHeabB(int)
+comment2.text=\r\n\ Setter\ the\ Number\ of\ Objects\ in\ Heab\ B\r\n\ \r\n\ @param\ \ Number\ of\ Objects\r\n\ @return\ \ \ \ None\ \r\n
+comment3.params=num
+comment3.target=void\ setHeabC(int)
+comment3.text=\r\n\ Setter\ the\ Number\ of\ Objects\ in\ Heab\ C\r\n\ \r\n\ @param\ \ Number\ of\ Objects\r\n\ @return\ \ \ \ None\ \r\n
+comment4.params=
+comment4.target=int\ getHeabA()
+comment4.text=\r\n\ getter\ the\ Number\ of\ Objects\ in\ Heab\ A\r\n\ \r\n\ @param\ \ None\r\n\ @return\ \ \ \ Number\ of\ Objects\r\n
+comment5.params=
+comment5.target=int\ getHeabB()
+comment5.text=\r\n\ Setter\ the\ Number\ of\ Objects\ in\ Heab\ B\r\n\ \r\n\ @param\ \ None\r\n\ @return\ \ \ \ Number\ of\ Objects\r\n
+comment6.params=
+comment6.target=int\ getHeabC()
+comment6.text=\r\n\ Setter\ the\ Number\ of\ Objects\ in\ Heab\ C\r\n\ \r\n\ @param\ \ None\r\n\ @return\ \ \ \ Number\ of\ Objects\r\n
+comment7.params=player
+comment7.target=int\ c(java.lang.String)
+comment7.text=\r\n\ Game\ Rule\r\n\ \r\n\ @param\ \ Player\ Name\r\n\ @return\ \ \ \ COunt\ tell\ finish\ (as\ boolean\ if\ it\ is\ finished\ or\ not)\ \r\n
+numComments=8

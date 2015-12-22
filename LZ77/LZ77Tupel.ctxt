@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=index\ length\ s
+comment0.target=LZ77Tupel(int,\ int,\ java.lang.String)
+comment1.params=
+comment1.target=int\ getIndex()
+comment2.params=
+comment2.target=int\ getLength()
+comment3.params=
+comment3.target=java.lang.String\ getString()
+numComments=4

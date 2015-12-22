@@ -1,0 +1,54 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files\Java\jdk1.8.0_60\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;D:\java\Assignment P1
+-d
+D:\java\Assignment P1\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+D:\java\Assignment P1\Account.java
+<---- end of javadoc command ---->
+Loading source file D:\java\Assignment P1\Account.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_60
+Building tree for all the packages and classes...
+Generating D:\java\Assignment P1\doc\Account.html...
+D:\java\Assignment P1\Account.java:86: warning - @param argument "the" is not a parameter name.
+D:\java\Assignment P1\Account.java:86: warning - @return tag cannot be used in method with void return type.
+D:\java\Assignment P1\Account.java:55: warning - @param argument "No" is not a parameter name.
+D:\java\Assignment P1\Account.java:65: warning - @param argument "No" is not a parameter name.
+D:\java\Assignment P1\Account.java:45: warning - @param argument "account" is not a parameter name.
+D:\java\Assignment P1\Account.java:45: warning - @return tag cannot be used in method with void return type.
+D:\java\Assignment P1\Account.java:35: warning - @param argument "the" is not a parameter name.
+D:\java\Assignment P1\Account.java:35: warning - @return tag cannot be used in method with void return type.
+D:\java\Assignment P1\Account.java:76: warning - @@Override is an unknown tag.
+D:\java\Assignment P1\Account.java:76: warning - @param argument "No" is not a parameter name.
+D:\java\Assignment P1\Account.java:96: warning - @param argument "the" is not a parameter name.
+D:\java\Assignment P1\Account.java:96: warning - @return tag cannot be used in method with void return type.
+Generating D:\java\Assignment P1\doc\package-frame.html...
+Generating D:\java\Assignment P1\doc\package-summary.html...
+Generating D:\java\Assignment P1\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating D:\java\Assignment P1\doc\allclasses-frame.html...
+Generating D:\java\Assignment P1\doc\allclasses-noframe.html...
+Generating D:\java\Assignment P1\doc\index.html...
+Generating D:\java\Assignment P1\doc\stylesheet.css...
+12 warnings
